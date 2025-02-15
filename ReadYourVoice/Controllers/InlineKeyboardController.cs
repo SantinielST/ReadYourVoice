@@ -31,6 +31,7 @@ class InlineKeyboardController
         {
             "ru" => " Русский",
             "en" => " Английский",
+            "fr" => " Французский",
             _ => String.Empty
         };
 
@@ -40,8 +41,6 @@ class InlineKeyboardController
             $"{Environment.NewLine}Можно поменять в главном меню.", cancellationToken: ct,
             parseMode: ParseMode.Html);
 
-        Console.WriteLine($"Контроллер {GetType().Name} получил сообщение");
-
-        await _telegramBotClient.SendTextMessageAsync(callbackQuery.From.Id, $"Обнаружено нажатие на кнопку", cancellationToken: ct);
+        Console.WriteLine($"Контроллер {GetType().Name} получил сообщение {callbackQuery.From.Username}");
     }
 }

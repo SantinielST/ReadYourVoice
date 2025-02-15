@@ -23,8 +23,9 @@ class TextMessageController
                 var buttons = new List<InlineKeyboardButton[]>();
                 buttons.Add(new[]
                 {
-                    InlineKeyboardButton.WithCallbackData($"Русский ", $"ru"),
-                    InlineKeyboardButton.WithCallbackData($"English ", $"en"),
+                    InlineKeyboardButton.WithCallbackData($" Русский", $"ru"),
+                    InlineKeyboardButton.WithCallbackData($" English", $"en"),
+                    InlineKeyboardButton.WithCallbackData($" Français", $"fr"),
                 });
 
                 // передаем кнопки вместе с сообщением (параметр ReplyMarkup)

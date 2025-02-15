@@ -42,6 +42,7 @@ internal class Program
         //..
         services.AddSingleton<IStorage, MemoryStorage>();
         //..
+        services.AddSingleton<IFileHandler, AudioFileHandler>();
 
         // Регистрируем объект TelegramBotClient c токеном подключения
         services.AddSingleton<ITelegramBotClient>(provider => new TelegramBotClient(appSettings.BotToken));
@@ -54,7 +55,12 @@ internal class Program
     {
         return new AppSettings()
         {
-            BotToken = "8165679921:AAG1wEzQisl5odYQGkDPmEHpUvDmxZCqqpc"
+            DownloadsFolder = "D:\\Monster\\Downloads",
+            BotToken = "8165679921:AAG1wEzQisl5odYQGkDPmEHpUvDmxZCqqpc",
+            AudioFileName = "audio",
+            InputAudioFormat = "ogg",
+            OutputAudioFormat = "wav",
+            InputAudioBitrate = 48000
         };
     }
 }
